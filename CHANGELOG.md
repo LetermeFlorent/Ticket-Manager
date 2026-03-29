@@ -10,6 +10,8 @@ Ce projet respecte le [Versionning Sémantique](https://semver.org/lang/fr/).
 - Commentaire header dans constants.js (format non conforme)
 - Cohérence des statuts (Ouvert / En cours / Fermé) dans tout le code
 
+## [1.1.0] - 2026-03-29
+
 ### Modifié
 - Cycle de statut avec boutons sur les tickets
 
