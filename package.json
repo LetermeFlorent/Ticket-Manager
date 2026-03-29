@@ -1,6 +1,6 @@
 {
   "name": "ticket-manager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Application desktop de gestion de tickets internes",
   "main": "out/main/index.js",
   "scripts": {
@@ -28,6 +28,24 @@
     },
     "files": [
       "out/**/*"
-    ]
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis",     "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "linux": {
+      "target": [
+        { "target": "AppImage", "arch": ["x64"] },
+        { "target": "deb",      "arch": ["x64"] },
+        { "target": "rpm",      "arch": ["x64"] }
+      ]
+    },
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["x64", "arm64"] }
+      ]
+    }
   }
 }

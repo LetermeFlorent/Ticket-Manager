@@ -4,6 +4,12 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 Ce projet respecte le [Versionning Sémantique](https://semver.org/lang/fr/).
 
+## [1.1.0] - 2026-03-29
+
+### Modifié
+- Cycle de statut mis à jour : À faire → En cours → Terminé
+- Boutons de changement de statut ajoutés sur les tickets
+
 ## [1.0.0] - 2026-03-29
 
 ### Ajouté
