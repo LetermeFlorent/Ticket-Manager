@@ -4,7 +4,7 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 Ce projet respecte le [Versionning Sémantique](https://semver.org/lang/fr/).
 
-## [1.1.0] - 2026-03-29
+## [1.1.1] - 2026-03-29
 
 ### Corrigé
 - Commentaire header dans constants.js (format non conforme)
