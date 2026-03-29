@@ -1,0 +1,32 @@
+/* Header.module.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.icon  { font-size: 1.4rem; }
+.title { font-size: 1.25rem; font-weight: 700; letter-spacing: -.5px; }
+
+.actions { display: flex; gap: 10px; }
+
+.fakerBtn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+.fakerBtn:hover { border-color: var(--accent); opacity: 1; }
+
+.newBtn {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+.newBtn:hover { background: var(--accent-h); opacity: 1; }

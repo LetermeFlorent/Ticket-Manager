@@ -1,0 +1,27 @@
+/* ViewSwitcher.module.css */
+.switcher {
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--border); color: var(--text); opacity: 1; }
+
+.active { background: var(--accent) !important; color: #fff !important; }
+
+.icon  { font-size: 1rem; line-height: 1; }
+.label { font-size: 0.8rem; }
