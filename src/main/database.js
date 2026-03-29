@@ -5,7 +5,7 @@
 import initSqlJs from 'sql.js'
 import { app } from 'electron'
 import { join } from 'path'
-import { existsSync, readFileSync, writeFileSync } from 'fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 
 let db
 
@@ -15,7 +15,13 @@ export function getDb() {
 
 export async function initDatabase() {
   const SQL = await initSqlJs()
-  const dbPath = join(app.getPath('userData'), 'issuehub.db')
+  const userDataPath = app.getPath('userData')
+
+  if (!existsSync(userDataPath)) {
+    mkdirSync(userDataPath, { recursive: true })
+  }
+
+  const dbPath = join(userDataPath, 'tickets.db')
 
   if (existsSync(dbPath)) {
     const fileBuffer = readFileSync(dbPath)
@@ -41,8 +47,9 @@ export async function initDatabase() {
 }
 
 export function saveDb() {
+  const userDataPath = app.getPath('userData')
+  const dbPath = join(userDataPath, 'tickets.db')
   const data = db.export()
   const buffer = Buffer.from(data)
-  const dbPath = join(app.getPath('userData'), 'issuehub.db')
   writeFileSync(dbPath, buffer)
 }

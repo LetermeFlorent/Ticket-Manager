@@ -3,7 +3,7 @@
  * Logique métier tickets — validation + appel modèle
  */
 import TicketModel from '../models/TicketModel'
-import { validateTicket } from '../utils/validation'
+import { validateTicket, isValidId } from '../utils/validation'
 
 const ticketService = {
   getAll(filters) {
@@ -11,6 +11,7 @@ const ticketService = {
   },
 
   getById(id) {
+    if (!isValidId(id)) return { success: false, error: 'ID invalide.' }
     const ticket = TicketModel.findById(id)
     if (!ticket) return { success: false, error: 'Ticket introuvable.' }
     return { success: true, data: ticket }
@@ -23,6 +24,7 @@ const ticketService = {
   },
 
   update(id, data) {
+    if (!isValidId(id)) return { success: false, error: 'ID invalide.' }
     const errors = validateTicket(data)
     if (errors.length) return { success: false, error: errors.join(' ') }
     if (!TicketModel.findById(id)) return { success: false, error: 'Ticket introuvable.' }
@@ -30,6 +32,7 @@ const ticketService = {
   },
 
   delete(id) {
+    if (!isValidId(id)) return { success: false, error: 'ID invalide.' }
     if (!TicketModel.findById(id)) return { success: false, error: 'Ticket introuvable.' }
     TicketModel.delete(id)
     return { success: true }

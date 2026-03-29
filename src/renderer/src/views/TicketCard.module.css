@@ -1,5 +1,45 @@
 /* TicketCard.module.css */
 
+/* === STATUS TOGGLE === */
+.statusToggle {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color .15s, background .15s, color .15s;
+  flex-shrink: 0;
+}
+.statusToggle:hover { opacity: 1; transform: scale(1.15); }
+
+.status_Ouvert {
+  border-color: #3b82f6;
+  color: transparent;
+}
+.status_Ouvert:hover {
+  background: #3b82f620;
+}
+
+.status_En_cours {
+  border-color: #f97316;
+  color: #f97316;
+  background: #f9731615;
+}
+
+.status_Fermé {
+  border-color: #22c55e;
+  background: #22c55e;
+  color: #fff;
+}
+
 /* === MODE LISTE === */
 .card {
   background: var(--surface);
@@ -38,10 +78,11 @@
 }
 .cardGrid:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-.gridTop    { display: flex; justify-content: space-between; align-items: center; }
-.gridTitle  { font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
-.gridDesc   { font-size: 0.78rem; color: var(--muted); line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-.gridFooter { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
+.gridTop     { display: flex; justify-content: space-between; align-items: center; }
+.gridTopLeft { display: flex; align-items: center; gap: 6px; }
+.gridTitle   { font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
+.gridDesc    { font-size: 0.78rem; color: var(--muted); line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.gridFooter  { display: flex; gap: 6px; flex-wrap: wrap; margin-top: auto; }
 
 .gridActions {
   display: flex;
@@ -53,4 +94,4 @@
 }
 .cardGrid:hover .gridActions { opacity: 1; }
 
-.btnEdit   { background: #374151; color: #fff; padding: 4px 8px; font-size: 0.75rem; }
+.btnEdit { background: #374151; color: #fff; padding: 4px 8px; font-size: 0.75rem; }

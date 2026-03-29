@@ -1,5 +1,5 @@
 /**
- * constants.js (renderer)
+ * constants.js
  * Constantes partagées côté UI
  */
 export const TYPES      = ['Bug', 'Tâche', 'Demande']
@@ -19,7 +19,7 @@ export const TYPE_COLORS = {
 }
 
 export const STATUS_COLORS = {
-  Ouvert:    '#3b82f6',
-  'En cours':'#f97316',
-  Fermé:     '#6b7280'
+  'Ouvert':    '#3b82f6',
+  'En cours':  '#f97316',
+  'Fermé':     '#6b7280'
 }

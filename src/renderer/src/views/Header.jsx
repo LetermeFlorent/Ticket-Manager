@@ -9,7 +9,7 @@ export default function Header({ onNew, onFaker }) {
     <header className={styles.header}>
       <div className={styles.brand}>
         <span className={styles.icon}>🎫</span>
-        <h1 className={styles.title}>IssueHub</h1>
+        <h1 className={styles.title}>Ticket Manager</h1>
       </div>
       <div className={styles.actions}>
         <button className={styles.fakerBtn} onClick={onFaker}>🎲 Faker</button>

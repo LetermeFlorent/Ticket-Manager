@@ -15,28 +15,28 @@ function Empty() {
   )
 }
 
-function ListView({ tickets, onView, onEdit, onDelete }) {
+function ListView({ tickets, onView, onEdit, onDelete, onStatusChange }) {
   return (
     <div className={styles.listInner}>
       {tickets.map(t => (
-        <TicketCard key={t.id} ticket={t} onView={onView} onEdit={onEdit} onDelete={onDelete} />
+        <TicketCard key={t.id} ticket={t} onView={onView} onEdit={onEdit} onDelete={onDelete} onStatusChange={onStatusChange} />
       ))}
     </div>
   )
 }
 
-function GridView({ tickets, onView, onEdit, onDelete }) {
+function GridView({ tickets, onView, onEdit, onDelete, onStatusChange }) {
   return (
     <div className={styles.grid}>
       {tickets.map(t => (
-        <TicketCard key={t.id} ticket={t} compact onView={onView} onEdit={onEdit} onDelete={onDelete} />
+        <TicketCard key={t.id} ticket={t} compact onView={onView} onEdit={onEdit} onDelete={onDelete} onStatusChange={onStatusChange} />
       ))}
     </div>
   )
 }
 
-export default function TicketList({ tickets, viewMode = 'list', onView, onEdit, onDelete }) {
-  const actions = { onView, onEdit, onDelete }
+export default function TicketList({ tickets, viewMode = 'list', onView, onEdit, onDelete, onStatusChange }) {
+  const actions = { onView, onEdit, onDelete, onStatusChange }
 
   if (viewMode === 'kanban') {
     return (
