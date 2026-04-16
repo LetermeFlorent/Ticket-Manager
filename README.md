@@ -1,76 +1,100 @@
 # Ticket Manager
 
-Application desktop de gestion de tickets internes (tâches, bugs, demandes).
+Application desktop simple de gestion de tickets internes.
 
-## Stack technique
+## Objectif
 
-| Composant | Technologie |
-|-----------|-------------|
-| Framework desktop | Electron |
-| Frontend | React |
-| Base de données | SQLite (sql.js) |
-| Bundler | electron-vite |
-| Architecture | MVC |
+Cette application permet de :
 
-## Prérequis
+- créer des tickets
+- consulter les tickets
+- modifier les tickets
+- supprimer les tickets
+- filtrer par statut
+- filtrer par priorité
+- générer des tickets de test avec `Faker`
+- supprimer tous les tickets depuis la popup `Faker`
 
-- Node.js 18+
-- npm 9+
+## Lancer le projet
 
-## Installation
+Prérequis :
+
+- Node.js installé
+- npm disponible
+
+Installation :
 
 ```bash
 npm install
 ```
 
-## Lancement en développement
+Lancement en mode desktop :
 
 ```bash
-npm run dev
+npm start
 ```
 
-## Build production
+## Générer le fichier portable
 
 ```bash
-npm run build
+npm run dist
 ```
 
-L'exécutable se trouve dans `dist/`.
+Le fichier `.exe` portable est généré dans le dossier `dist/`.
 
-## Fonctionnalités
+## Technologies utilisées
 
-- ✅ Créer, consulter, modifier, supprimer des tickets
-- ✅ Filtrer par statut (Ouvert / En cours / Fermé) et priorité (Haute / Moyenne / Basse)
-- ✅ Vue liste et vue Kanban
-- ✅ Persistance locale via SQLite (pas de serveur requis)
-- ✅ Architecture MVC claire (main process)
-- ✅ IPC sécurisé via contextBridge (pas de nodeIntegration)
-- ✅ Validation des données côté service
+- Electron
+- Node.js
+- Express
+- SQLite avec `sql.js`
+- HTML
+- CSS
+- JavaScript
 
-## Structure du projet
+## Architecture
 
+- `electron-main.js`
+  processus principal Electron
+- `server.js`
+  serveur Express et routes API
+- `lib/`
+  logique métier et base SQLite
+- `public/`
+  interface utilisateur
+- `documentation/`
+  documentation technique et utilisateur
+
+## Frameworks et outils
+
+### Antigravity
+
+Antigravity a été utilisé comme aide de travail et d'organisation pendant le projet.
+
+### Codex
+
+Codex a été utilisé comme assistant de développement pour accélérer l'implémentation, le nettoyage du code, la documentation et le build.
+
+## Scripts npm
+
+- `npm start`
+  lance l'application desktop
+- `npm run dev`
+  lance le serveur en mode watch
+- `npm run dist`
+  génère un build Windows portable
+
+## Données
+
+Les tickets sont stockés localement dans SQLite.
+
+Fichier utilisé :
+
+```txt
+data/tickets.db
 ```
-Ticket-Manager/
-├── src/
-│   ├── main/                  # Process principal Electron
-│   │   ├── index.js           # Point d'entrée Electron
-│   │   ├── database.js        # Init SQLite
-│   │   ├── models/            # Accès données
-│   │   ├── services/          # Logique métier
-│   │   ├── controllers/       # Orchestration IPC
-│   │   └── utils/             # Constantes, validation
-│   ├── preload/
-│   │   └── index.js           # Bridge IPC sécurisé
-│   └── renderer/              # Application React
-│       └── src/
-│           ├── App.jsx
-│           └── views/         # Composants UI
-├── CHANGELOG.md
-├── electron.vite.config.js
-└── package.json
-```
 
-## Versionning
+## Documentation
 
-Ce projet suit [Semantic Versioning](https://semver.org/lang/fr/).  
-Voir [CHANGELOG.md](./CHANGELOG.md) pour l'historique des versions.
+- `documentation/documentation-technique.md`
+- `documentation/documentation-utilisateur.md`

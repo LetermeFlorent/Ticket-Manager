@@ -1,0 +1,70 @@
+.topbar, .toolbar, .split, .actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar {
+  gap: 20px;
+  align-items: center;
+}
+
+.title-row {
+  min-width: 220px;
+  white-space: nowrap;
+}
+
+.grid {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.card, .panel, .field {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.actions {
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+
+.toolbar {
+  margin: 0 0 20px;
+  width: 100%;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.toolbar select {
+  width: 180px;
+}
+
+.message, .muted {
+  color: var(--soft);
+}
+
+.message {
+  min-height: 24px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+  }
+
+  .toolbar,
+  .card,
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar button, .toolbar select, .actions button {
+    width: 100%;
+  }
+}

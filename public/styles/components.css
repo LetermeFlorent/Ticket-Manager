@@ -1,0 +1,100 @@
+.eyebrow, .type {
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card, .modal, .toolbar select, .field input, .field textarea, .field select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.card {
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 70px minmax(160px, 220px) minmax(200px, 1fr) 120px 100px 110px 110px 220px;
+  align-items: center;
+}
+
+.badge {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: 999px;
+}
+
+.status-Ouvert { background: #fde8c8; }
+.status-En-cours { background: #dcecff; }
+.status-Fermé { background: #dff2df; }
+
+.type {
+  color: var(--brand-2);
+}
+
+.toolbar select, .field input, .field textarea, .field select {
+  padding: 12px;
+}
+
+.card h2 {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ticket-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;
+}
+
+.primary, .secondary, .danger {
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.primary { color: white; background: var(--brand); }
+.secondary { background: #f2f2f2; }
+.danger { color: white; background: var(--danger); }
+
+.empty {
+  padding: 40px;
+  text-align: center;
+}
+
+.modal {
+  width: min(560px, calc(100% - 24px));
+  max-width: 560px;
+  padding: 0;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.panel {
+  padding: 20px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

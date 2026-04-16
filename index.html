@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Manager</title>
+  <link rel="stylesheet" href="/public/styles/base.css">
+  <link rel="stylesheet" href="/public/styles/layout.css">
+  <link rel="stylesheet" href="/public/styles/components.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="title-row">
+        <h1>Ticket Manager</h1>
+      </div>
+      <div class="toolbar">
+        <select id="statusFilter"></select>
+        <select id="priorityFilter"></select>
+        <button id="fakerBtn" class="secondary">Faker</button>
+        <button id="createBtn" class="primary">Nouveau ticket</button>
+      </div>
+    </header>
+    <section id="message" class="message"></section>
+    <section id="tickets" class="grid"></section>
+  </main>
+  <dialog id="modal" class="modal"></dialog>
+  <script type="module" src="/public/app.js"></script>
+</body>
+</html>

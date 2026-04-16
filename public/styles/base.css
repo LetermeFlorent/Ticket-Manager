@@ -1,0 +1,54 @@
+:root {
+  --panel: #fff;
+  --line: #d9d9d9;
+  --text: #111;
+  --soft: #666;
+  --brand: #000;
+  --brand-2: #000;
+  --danger: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+  background: #fff;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 24px 32px;
+}
+
+.message, .muted {
+  color: var(--soft);
+}
+
+.message {
+  min-height: 24px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 16px;
+  }
+}
